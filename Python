@@ -1,0 +1,21 @@
+import openai
+
+def AskRude(text): 
+    openai.api_key = "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"
+    response = openai.Completion.create(
+        model = "text-davinci-003", 
+        prompt = text,
+        temperature = 0.6,
+        max_tokens = 150
+    )
+ 
+    return print (response.choices[0].text) 
+  
+def main():
+    while True: 
+        print ("I am Rudela, ask me a question \n")
+        myQn = input()
+        AskRude (myQn)
+        print ('\n')        
+        
+main()
